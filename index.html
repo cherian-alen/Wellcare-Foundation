@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e16">
+  <meta name="description" content="Wellcare Foundation — responsive website design prototype. Content and contact details are placeholders.">
+  <title>Wellcare Foundation | Website UI Prototype</title>
+  <link rel="stylesheet" href="css/wellcare-foundation-unified.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/wellcare-foundation-main.js" defer></script>
+</head>
+<body class="wf-site">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Local SVG icon system; no icon font/library required. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.5 5.5a5.2 5.2 0 0 0-7.35 0L12 6.65l-1.15-1.15a5.2 5.2 0 0 0-7.35 7.35L12 21l8.5-8.15a5.2 5.2 0 0 0 0-7.35Z"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20v-2a6.5 6.5 0 0 1 13 0v2m1-14a3 3 0 0 1 0 6m1.5 2a5 5 0 0 1 3.5 4.8V20"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5.1-3.4 8.4-8 10-4.6-1.6-8-4.9-8-10V6l8-4Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3V10Z"/><path d="M9 21v-8h6v8"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8 8.8 8.8 0 0 1-4-.9L3 20l1.9-5A8 8 0 1 1 20 11Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M21 16.5V20a2 2 0 0 1-2.2 2C9.7 21.2 2.8 14.3 2 5.2A2 2 0 0 1 4 3h3.5a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.8 11a16 16 0 0 0 5.2 5.2l1.5-1.6a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2.2Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3"/><circle cx="8" cy="9" r="2"/><path d="m3 18 6-5 4 3 4-5 4 4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  </svg>
+
+  <div id="site-header" data-include="components/header.html" aria-label="Site header"></div>
+   <header id="header"></header>
+
+  <main id="main-content">
+    <!-- 01 / HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__texture" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> WELLCARE FOUNDATION <span class="eyebrow__index">/ </span></div>
+          <h1 id="hero-title" class="hero__title">Everyone Deserves<br>to <em>belong<span class="accent-dot">.</span></em></h1>
+          <p class="hero__intro">We believe every person deserves connection, dignity and opportunity. Wellcare Foundation is committed to strengthening Australian communities by encouraging inclusion, wellbeing and meaningful participation for people of all ages and backgrounds.</p>
+          <div class="hero__actions">
+            <a href="#services" class="btn btn--orange">Explore our services <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+            <a href="about.html" class="text-link text-link--light">Discover our story <svg class="icon"><use href="#i-arrow"></use></svg></a>
+          </div>
+          <div class="hero__bottom"><span class="hero__pulse" aria-hidden="true"></span><span>Health • Community • Belonging</span></div>
+        </div>
+        <div class="hero__art" aria-label="Decorative abstract image placeholder">
+          <div class="hero__art-grid" aria-hidden="true"></div>
+          <div class="hero__art-orbit hero__art-orbit--one" aria-hidden="true"></div>
+          <div class="hero__art-orbit hero__art-orbit--two" aria-hidden="true"></div>
+          <div class="hero__art-circle" aria-hidden="true"></div>
+          <div class="hero__art-figure" aria-hidden="true"></div>
+          <span class="hero__art-caption"><svg class="icon">
+            <img src="img/img11.jpg" alt="Wellcare Foundation community" class="hero__main-image">
+        </svg> HERO VISUAL PLACEHOLDER</span>
+          <span class="hero__art-number" aria-hidden="true">W.</span>
+          <div class="hero__floating-card"><span class="round-icon round-icon--blue"><svg class="icon"><use href="img/img4.jpg"></use></svg></span><span><strong>People first</strong><small>Visual identity placeholder</small></span></div>
+        </div>
+      </div>
+      <div class="hero__side-note" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <!-- MOVING KEYWORDS -->
+    <div class="ticker" aria-label="Care, community, connection and inclusion">
+      <div class="ticker__track" aria-hidden="true">
+        <span>CARE <b>✳</b> COMMUNITY <b>✳</b> CONNECTION <b>✳</b> INCLUSION <b>✳</b></span>
+        <span>CARE <b>✳</b> COMMUNITY <b>✳</b> CONNECTION <b>✳</b> INCLUSION <b>✳</b></span>
+        <span>CARE <b>✳</b> COMMUNITY <b>✳</b> CONNECTION <b>✳</b> INCLUSION <b>✳</b></span>
+      </div>
+    </div>
+
+    <!-- 02 / ABOUT -->
+    <section class="section section--light about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__image reveal">
+          <div class="media-placeholder media-placeholder--about">
+            <div class="media-placeholder__decor media-placeholder__decor--circle"></div>
+            <div class="media-placeholder__decor media-placeholder__decor--square"></div>
+            <div class="media-placeholder__tag"><svg class="icon"><use href="img/img1.jpg"></use></svg> ABOUT IMAGE PLACEHOLDER</div>
+          </div>
+          <div class="about__seal"><svg class="icon"><use href="img/WCALogofinal.png"></use></svg><span>PEOPLE<br>AT HEART</span></div>
+        </div>
+        <div class="about__content reveal">
+          <div class="eyebrow"><span class="eyebrow__dash"></span> 01 / ABOUT US</div>
+          <h2 class="section-title" id="about-title">Every story<br>deserves <span class="text-blue">support.</span></h2>
+          <p class="section-lead">[About section placeholder — share your organisation’s mission and the people, families or communities you support.]</p>
+          <p class="body-copy">[Add a second short paragraph about the Foundation, its history, values, or approach. This content is intentionally not populated.]</p>
+          <div class="about__mini-grid">
+            <div><span class="about__line-number">01.</span><strong>Purpose-led</strong><small>[Value placeholder]</small></div>
+            <div><span class="about__line-number">02.</span><strong>Community-first</strong><small>[Value placeholder]</small></div>
+          </div>
+          <a href="#why-us" class="btn btn--dark">What makes us different <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / SERVICES -->
+    <section class="section section--dark services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 02 / OUR SERVICES</div><h2 class="section-title section-title--light" id="services-title">Support designed<br>around <span class="text-orange">people.</span></h2></div>
+          <div class="section-heading__aside"><p>[Services introduction placeholder — replace with a concise overview of your support programs.]</p><a href="#contact" class="text-link text-link--light">Make an enquiry <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+        </div>
+        <div class="services__grid">
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">01 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-people"></use></svg></span><h3>Community support</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">02 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-heart"></use></svg></span><h3>Disability support</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">03 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-sun"></use></svg></span><h3>Wellbeing programs</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">04 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-home"></use></svg></span><h3>In-home assistance</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">05 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-message"></use></svg></span><h3>Mentoring & guidance</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+          <article class="service-card reveal"><span class="service-card__top"><span class="service-card__number">06 / 06</span><svg class="icon icon--arrow"><use href="#i-arrow-up-right"></use></svg></span><span class="service-card__icon"><svg class="icon"><use href="#i-shield"></use></svg></span><h3>Personalised care</h3><p>[Service description placeholder.]</p><span class="service-card__rule"></span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / ANIMATED COUNTERS (EXPLICIT DEMO PLACEHOLDERS) -->
+    <section class="stats" id="impact" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="stats__intro"><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 03 / OUR IMPACT</div><h2 id="stats-title">A place for future<br>impact stories.</h2><p>DEMONSTRATION VALUES ONLY — NOT REAL FOUNDATION STATISTICS.</p></div>
+        <div class="stats__grid">
+          <div class="stat"><span class="stat__value"><span data-counter="120">0</span><sup>+</sup></span><span class="stat__label">Demo metric 01</span></div>
+          <div class="stat"><span class="stat__value"><span data-counter="25">0</span><sup>+</sup></span><span class="stat__label">Demo metric 02</span></div>
+          <div class="stat"><span class="stat__value"><span data-counter="14">0</span><sup>+</sup></span><span class="stat__label">Demo metric 03</span></div>
+          <div class="stat"><span class="stat__value"><span data-counter="98">0</span><sup>%</sup></span><span class="stat__label">Demo metric 04</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / WHY CHOOSE US -->
+    <section class="section section--light why" id="why-us" aria-labelledby="why-title">
+      <div class="container why__grid">
+        <div class="why__intro reveal"><div class="eyebrow"><span class="eyebrow__dash"></span> 04 / WHY CHOOSE US</div><h2 class="section-title" id="why-title">Small acts.<br><span class="text-blue">Big impact.</span></h2><p class="section-lead">[Why Choose Us introduction placeholder. Explain the values and approach that matter to your community.]</p><div class="why__graphic" aria-hidden="true"><span>W<span>.</span></span><div class="why__graphic-ring"></div></div></div>
+        <div class="why__list">
+          <article class="why-item reveal"><span class="why-item__number">01</span><div><h3>Person-centred approach</h3><p>[Reason and supporting statement placeholder.]</p></div><svg class="icon"><use href="#i-arrow-up-right"></use></svg></article>
+          <article class="why-item reveal"><span class="why-item__number">02</span><div><h3>Inclusive community</h3><p>[Reason and supporting statement placeholder.]</p></div><svg class="icon"><use href="#i-arrow-up-right"></use></svg></article>
+          <article class="why-item reveal"><span class="why-item__number">03</span><div><h3>Supportive partnerships</h3><p>[Reason and supporting statement placeholder.]</p></div><svg class="icon"><use href="#i-arrow-up-right"></use></svg></article>
+          <article class="why-item reveal"><span class="why-item__number">04</span><div><h3>Community connection</h3><p>[Reason and supporting statement placeholder.]</p></div><svg class="icon"><use href="#i-arrow-up-right"></use></svg></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / TESTIMONIALS -->
+    <section class="section section--dark testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-heading reveal"><div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 05 / VOICES</div><h2 class="section-title section-title--light" id="testimonials-title">Stories that<br><span class="text-blue">matter.</span></h2></div><div class="carousel-controls"><button class="circle-button" type="button" data-slider-prev aria-label="Previous testimonial">←</button><button class="circle-button" type="button" data-slider-next aria-label="Next testimonial">→</button></div></div>
+        <div class="testimonials__track" data-testimonial-slider tabindex="0" aria-label="Testimonial placeholder cards">
+          <article class="quote-card"><span class="quote-card__mark" aria-hidden="true">“</span><p>“[Testimonial placeholder — insert a real quote only after receiving permission to publish it.]”</p><div class="quote-card__person"><span class="avatar avatar--one" aria-hidden="true">01</span><span><strong>Participant name</strong><small>Role / relationship placeholder</small></span></div></article>
+          <article class="quote-card"><span class="quote-card__mark" aria-hidden="true">“</span><p>“[Testimonial placeholder — replace this copy with an approved community story.]”</p><div class="quote-card__person"><span class="avatar avatar--two" aria-hidden="true">02</span><span><strong>Participant name</strong><small>Role / relationship placeholder</small></span></div></article>
+          <article class="quote-card"><span class="quote-card__mark" aria-hidden="true">“</span><p>“[Testimonial placeholder — add verified feedback from a person or partner.]”</p><div class="quote-card__person"><span class="avatar avatar--three" aria-hidden="true">03</span><span><strong>Participant name</strong><small>Role / relationship placeholder</small></span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 / GALLERY WITH WORKING FILTERS -->
+    <section class="section section--light gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-heading section-heading--bottom reveal"><div><div class="eyebrow"><span class="eyebrow__dash"></span> 06 / GALLERY</div><h2 class="section-title" id="gallery-title">Moments of<br><span class="text-orange">connection.</span></h2></div><p class="section-heading__aside">[Gallery description placeholder. Use consented, accessible photographs when available.]</p></div>
+        <div class="filter-bar" aria-label="Filter gallery">
+          <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All moments</button>
+          <button type="button" class="filter-button" data-filter="community" aria-pressed="false">Community</button>
+          <button type="button" class="filter-button" data-filter="care" aria-pressed="false">Care</button>
+          <button type="button" class="filter-button" data-filter="events" aria-pressed="false">Events</button>
+        </div>
+        <div class="gallery__grid">
+          <div class="gallery-tile gallery-tile--large gallery-tile--a reveal" data-gallery-category="community"><div class="gallery-tile__art"></div><span class="gallery-tile__label"><svg class="icon"><use href="#i-image"></use></svg> Community image 01</span></div>
+          <div class="gallery-tile gallery-tile--b reveal" data-gallery-category="care"><div class="gallery-tile__art"></div><span class="gallery-tile__label"><svg class="icon"><use href="#i-image"></use></svg> Care image 02</span></div>
+          <div class="gallery-tile gallery-tile--c reveal" data-gallery-category="events"><div class="gallery-tile__art"></div><span class="gallery-tile__label"><svg class="icon"><use href="#i-image"></use></svg> Event image 03</span></div>
+          <div class="gallery-tile gallery-tile--d reveal" data-gallery-category="community"><div class="gallery-tile__art"></div><span class="gallery-tile__label"><svg class="icon"><use href="#i-image"></use></svg> Community image 04</span></div>
+          <div class="gallery-tile gallery-tile--e reveal" data-gallery-category="care"><div class="gallery-tile__art"></div><span class="gallery-tile__label"><svg class="icon"><use href="#i-image"></use></svg> Care image 05</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 / TEAM -->
+    <section class="section section--dark team" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-heading reveal"><div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 07 / OUR PEOPLE</div><h2 class="section-title section-title--light" id="team-title">The people behind<br><span class="text-orange">the purpose.</span></h2></div><p class="section-heading__aside">[Team introduction placeholder. Add only approved staff photos, roles and biographies.]</p></div>
+        <div class="team__grid">
+          <article class="team-card reveal"><div class="team-card__media team-card__media--one"><span class="team-card__avatar" aria-hidden="true">01</span><span class="media-stamp">PHOTO PLACEHOLDER</span></div><div class="team-card__content"><div><h3>Team member 01</h3><p>Position placeholder</p></div><span class="team-card__plus" aria-hidden="true">↗</span></div></article>
+          <article class="team-card reveal"><div class="team-card__media team-card__media--two"><span class="team-card__avatar" aria-hidden="true">02</span><span class="media-stamp">PHOTO PLACEHOLDER</span></div><div class="team-card__content"><div><h3>Team member 02</h3><p>Position placeholder</p></div><span class="team-card__plus" aria-hidden="true">↗</span></div></article>
+          <article class="team-card reveal"><div class="team-card__media team-card__media--three"><span class="team-card__avatar" aria-hidden="true">03</span><span class="media-stamp">PHOTO PLACEHOLDER</span></div><div class="team-card__content"><div><h3>Team member 03</h3><p>Position placeholder</p></div><span class="team-card__plus" aria-hidden="true">↗</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 / BLOG -->
+    <section class="section section--dark blog" id="news" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="section-heading reveal"><div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 08 / NEWS & IDEAS</div><h2 class="section-title section-title--light" id="blog-title">What’s happening<br><span class="text-blue">around us.</span></h2></div><p class="section-heading__aside">[Blog section intro placeholder — publish articles, news and community updates here.]</p></div>
+        <div class="blog__grid">
+          <article class="news-card reveal"><div class="news-card__image news-card__image--a"><span class="news-card__image-label">FEATURE IMAGE 01</span><svg class="icon"><use href="#i-image"></use></svg></div><div class="news-card__meta"><span>NEWS CATEGORY</span><span>DATE PLACEHOLDER</span></div><h3>Article headline placeholder one.</h3><p>[Article excerpt placeholder.]</p><span class="news-card__text-link">Coming soon <svg class="icon"><use href="#i-arrow-up-right"></use></svg></span></article>
+          <article class="news-card reveal"><div class="news-card__image news-card__image--b"><span class="news-card__image-label">FEATURE IMAGE 02</span><svg class="icon"><use href="#i-image"></use></svg></div><div class="news-card__meta"><span>COMMUNITY</span><span>DATE PLACEHOLDER</span></div><h3>Article headline placeholder two.</h3><p>[Article excerpt placeholder.]</p><span class="news-card__text-link">Coming soon <svg class="icon"><use href="#i-arrow-up-right"></use></svg></span></article>
+          <article class="news-card reveal"><div class="news-card__image news-card__image--c"><span class="news-card__image-label">FEATURE IMAGE 03</span><svg class="icon"><use href="#i-image"></use></svg></div><div class="news-card__meta"><span>WELLBEING</span><span>DATE PLACEHOLDER</span></div><h3>Article headline placeholder three.</h3><p>[Article excerpt placeholder.]</p><span class="news-card__text-link">Coming soon <svg class="icon"><use href="#i-arrow-up-right"></use></svg></span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 / FAQ -->
+    <section class="section section--light faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__intro reveal"><div class="eyebrow"><span class="eyebrow__dash"></span> 09 / FAQ</div><h2 class="section-title" id="faq-title">Good questions.<br><span class="text-blue">Clear answers.</span></h2><p class="section-lead">[FAQ introduction placeholder — add useful information about eligibility, services and enquiries.]</p><a href="#contact" class="text-link">Ask us a question <svg class="icon"><use href="#i-arrow"></use></svg></a></div>
+        <div class="faq__items reveal">
+          <details class="faq-item" open><summary><span>01</span> What services are available? <span class="faq-item__plus">+</span></summary><p>[Answer placeholder — describe the relevant services and how to access them.]</p></details>
+          <details class="faq-item"><summary><span>02</span> Who can access support? <span class="faq-item__plus">+</span></summary><p>[Answer placeholder — explain the eligibility or referral process.]</p></details>
+          <details class="faq-item"><summary><span>03</span> How do I make an enquiry? <span class="faq-item__plus">+</span></summary><p>[Answer placeholder — describe the contact and response process.]</p></details>
+          <details class="faq-item"><summary><span>04</span> How can I get involved? <span class="faq-item__plus">+</span></summary><p>[Answer placeholder — add approved volunteering, partnership or donation information.]</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 / CTA -->
+    <section class="cta" id="get-involved" aria-labelledby="cta-title">
+      <div class="container cta__inner reveal"><div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 10 / TAKE THE NEXT STEP</div><h2 id="cta-title">Let’s build a more<br><em>connected future.</em></h2><p>[Call-to-action description placeholder.]</p></div><a href="#contact" class="btn btn--white">Let’s talk <svg class="icon"><use href="#i-arrow-up-right"></use></svg></a><div class="cta__shape" aria-hidden="true"></div></div>
+    </section>
+
+    <!-- 12 / CONTACT + MAP PLACEHOLDER -->
+    <section class="section section--dark contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-heading reveal"><div><div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> 11 / CONTACT US</div><h2 class="section-title section-title--light" id="contact-title">Start a<br><span class="text-orange">conversation.</span></h2></div><p class="section-heading__aside">[Add verified contact details and office locations before publishing the website.]</p></div>
+        <div class="contact__grid">
+          <div class="contact__details reveal">
+            <div class="contact-item"><span class="round-icon"><svg class="icon"><use href="#i-mail"></use></svg></span><div><span class="contact-item__label">EMAIL ADDRESS</span><strong>[Email placeholder]</strong></div></div>
+            <div class="contact-item"><span class="round-icon"><svg class="icon"><use href="#i-phone"></use></svg></span><div><span class="contact-item__label">PHONE NUMBER</span><strong>[Phone placeholder]</strong></div></div>
+            <div class="contact-item"><span class="round-icon"><svg class="icon"><use href="#i-pin"></use></svg></span><div><span class="contact-item__label">OFFICE LOCATION</span><strong>[Address placeholder]</strong></div></div>
+            <div class="map-placeholder" role="img" aria-label="Placeholder for embedded Google Map. No real location is shown."><span class="map-placeholder__grid" aria-hidden="true"></span><span class="map-placeholder__pin"><svg class="icon"><use href="#i-pin"></use></svg></span><span class="map-placeholder__caption">GOOGLE MAPS PLACEHOLDER<br><small>Replace with your confirmed location</small></span></div>
+          </div>
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="contact-form__heading"><h3>Send an enquiry.</h3><p>Front-end demo only. No messages are transmitted.</p></div>
+            <div class="field-row"><div class="field"><label for="contact-name">Full name <span aria-hidden="true">*</span></label><input id="contact-name" name="name" autocomplete="name" required placeholder="Your name"></div><div class="field"><label for="contact-email">Email address <span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div></div>
+            <div class="field"><label for="contact-subject">Enquiry type</label><select id="contact-subject" name="subject"><option value="">Select a topic (placeholder)</option><option>General enquiry</option><option>Services</option><option>Partnership</option><option>Other</option></select></div>
+            <div class="field"><label for="contact-message">Your message <span aria-hidden="true">*</span></label><textarea id="contact-message" name="message" rows="5" required minlength="10" placeholder="Write your message here..."></textarea></div>
+            <div class="contact-form__bottom"><p>Demo form — connect a secure server endpoint before launch.</p><button class="btn btn--orange" type="submit">Preview submission <svg class="icon"><use href="#i-arrow-up-right"></use></svg></button></div>
+            <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <div id="site-footer" data-include="components/footer.html" aria-label="Site footer"></div> -->
+  <button class="back-to-top" type="button" aria-label="Back to top"><svg class="icon"><use href="#i-arrow-up"></use></svg></button>
+</body>
+</html>
