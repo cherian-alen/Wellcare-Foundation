@@ -736,7 +736,7 @@
         if (
             window.jQuery &&
             typeof window.jQuery.fn.owlCarousel ===
-                "function"
+            "function"
         ) {
             const $carousel = window.jQuery(
                 ".testimonial-carousel"
@@ -899,5 +899,17 @@
     } else {
         initializeWebsite();
     }
+
+    const form = document.querySelector("#contact-form");
+
+    console.log({
+        formFound: !!form,
+        numberOfForms: document.querySelectorAll("#contact-form").length,
+        classes: form?.className,
+        display: form ? getComputedStyle(form).display : null,
+        opacity: form ? getComputedStyle(form).opacity : null,
+        visibility: form ? getComputedStyle(form).visibility : null,
+        width: form?.getBoundingClientRect().width
+    });
 
 })();

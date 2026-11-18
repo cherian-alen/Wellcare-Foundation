@@ -6988,7 +6988,11 @@ img { margin: 0; padding: 0; position: relative; z-index: 1; }
 .contact__info ul li a { text-decoration-line: underline; }
 .contact__info ul li a,
 .contact__info ul li span { font-weight: 300; font-size: 18px; line-height: 1.5; color: var(--black-2); display: block; margin-bottom: 10px; }
-.contact__form { position: relative; z-index: 9; }
+/* .contact__form { position: relative; z-index: 9; } */.contact-form {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
 .contact__form input,
 .contact__form textarea { width: 100%; font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--black-2); border: none; border-bottom: 1px solid #ffffff; padding: 15px 0; -webkit-transition: all 0.3s; transition: all 0.3s; outline: 0; position: relative; z-index: 1; background: transparent; margin-bottom: 35px; }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -12263,16 +12267,19 @@ body.menu-lock {
 .contact {
   background: #0c1726;
 }
+/* Contact section grid */
 .contact__grid {
-  display: grid;
-  grid-template-columns: .86fr 1.14fr;
-  gap: 7%;
-  align-items: start;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
 }
+
+/* Contact details */
 .contact__details {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+    min-width: 0;
 }
 .contact-item {
   display: flex;
@@ -13016,3 +13023,70 @@ body.menu-lock {
     transform: none;
   }
 }
+
+
+/* Gallery tile */
+.gallery-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    isolation: isolate;
+}
+
+/* Image container fills the tile */
+.gallery-tile__art {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+    z-index: 0;
+}
+
+/* Actual gallery image */
+.gallery-tile__art img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+/* Remove decorative placeholder overlays */
+.gallery-tile__art::before,
+.gallery-tile__art::after {
+    content: none;
+}
+
+/* Keep label visible above image */
+.gallery-tile__label {
+    position: absolute;
+    z-index: 3;
+}
+
+/* Zoom image on hover */
+.gallery-tile:hover .gallery-tile__art img {
+    transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-tile__art img {
+        transition: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
