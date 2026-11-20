@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#070c13" name="theme-color"/>
+<meta content="Explore the Wellcare Foundation community gallery, celebrating belonging, food support and connection across Australia." name="description"/>
+<title>Community Gallery | Wellcare Foundation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Kanit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Your supplied 13,018-line unified stylesheet, not a newly authored CSS file. -->
+<link href="css/wellcare-foundation-unified.css" rel="stylesheet"/>
+<script defer="" src="js/wellcare-foundation-main.js"></script>
+<style>
+/* Gallery-only styles: existing foundation typography, colors, header and footer are reused. */
+.wf-gallery-hero{background:#091421;color:#fff;position:relative;overflow:hidden;padding:clamp(110px,13vw,175px) 0 95px}
+.wf-gallery-hero::after{content:"";position:absolute;right:-10%;top:-40%;width:55%;aspect-ratio:1;border:1px solid rgba(255,255,255,.1);border-radius:50%;pointer-events:none}
+.wf-gallery-hero h1{font-family:Kanit,sans-serif;font-size:clamp(56px,9vw,126px);line-height:.91;letter-spacing:-.045em;max-width:920px;margin:26px 0}
+.wf-gallery-hero h1 em{color:var(--wf-orange,#ff8751);font-style:normal}
+.wf-gallery-hero p{font-size:clamp(17px,2vw,21px);line-height:1.65;color:#c6d0da;max-width:650px}
+.wf-gallery-section{background:var(--wf-cream,#f7f4ec);padding:90px 0 110px}
+.wf-gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.wf-gallery-heading h2{font-family:Kanit,sans-serif;font-size:clamp(38px,5vw,64px);line-height:1.04;margin:8px 0}
+.wf-gallery-heading p{max-width:410px;line-height:1.65}
+.wf-gallery-toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:28px}
+.wf-gallery-filters{display:flex;gap:9px;flex-wrap:wrap}
+.wf-gallery-filter{border:1px solid #c8cdd1;background:transparent;color:#182b3e;padding:10px 16px;border-radius:50px;cursor:pointer;font:600 13px 'DM Sans',sans-serif}
+.wf-gallery-filter:hover,.wf-gallery-filter[aria-pressed=true]{background:#142a40;color:#fff;border-color:#142a40}
+.wf-gallery-search{border:1px solid #c8cdd1;border-radius:40px;padding:11px 17px;background:#fff;max-width:100%;font:14px 'DM Sans',sans-serif}
+.wf-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.wf-gallery-card{min-width:0}.wf-gallery-card[hidden]{display:none}
+.wf-gallery-open{position:relative;display:block;width:100%;height:100%;min-height:260px;padding:0;overflow:hidden;border:0;border-radius:8px;background:#b9c2c6;text-align:left;cursor:zoom-in}
+.wf-gallery-card:nth-child(7n + 1){grid-column:span 2;grid-row:span 2}.wf-gallery-card:nth-child(7n + 1) .wf-gallery-open{min-height:536px}
+.wf-gallery-card:nth-child(7n + 4){grid-column:span 2}
+.wf-gallery-open img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.wf-gallery-open:hover img{transform:scale(1.06)}
+.wf-gallery-overlay{position:absolute;inset:auto 0 0;padding:65px 20px 20px;color:#fff;background:linear-gradient(transparent,rgba(3,12,22,.85));display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.wf-gallery-overlay strong{font:600 clamp(19px,2vw,27px) Kanit,sans-serif;line-height:1.15}
+.wf-gallery-category{font:700 10px 'DM Sans',sans-serif;letter-spacing:.18em;color:#ffac82}
+.wf-gallery-view{font-size:12px;opacity:0;transform:translateY(4px);transition:.2s}
+.wf-gallery-open:hover .wf-gallery-view,.wf-gallery-open:focus-visible .wf-gallery-view{opacity:1;transform:none}
+.wf-gallery-note{font-size:13px;line-height:1.6;color:#4d5a63;margin-top:28px;max-width:850px}
+.wf-gallery-empty{padding:45px 0;font-size:18px}
+.wf-gallery-dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1150px);max-height:94vh;color:#fff}
+.wf-gallery-dialog::backdrop{background:rgba(2,9,17,.94)}
+.wf-gallery-dialog-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px}
+.wf-gallery-dialog img{max-height:80vh;max-width:100%;object-fit:contain;border-radius:5px}
+.wf-gallery-close{position:absolute;top:12px;right:12px;background:#fff;color:#142a40;border:0;border-radius:40px;width:42px;height:42px;font-size:24px;cursor:pointer}
+.wf-gallery-dialog figcaption{font:600 16px 'DM Sans',sans-serif}
+@media(max-width:950px){.wf-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.wf-gallery-card:nth-child(n){grid-column:auto;grid-row:auto}.wf-gallery-card:nth-child(5n + 1){grid-column:span 2}.wf-gallery-card:nth-child(n) .wf-gallery-open{min-height:270px}}
+@media(max-width:650px){.wf-gallery-hero{padding:100px 0 70px}.wf-gallery-section{padding:65px 0}.wf-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.wf-gallery-card:nth-child(n){grid-column:auto}.wf-gallery-card:nth-child(5n + 1){grid-column:span 2}.wf-gallery-card:nth-child(n) .wf-gallery-open{min-height:220px}.wf-gallery-card:nth-child(5n + 1) .wf-gallery-open{min-height:300px}.wf-gallery-overlay{padding:45px 13px 13px}.wf-gallery-filter{padding:9px 12px}.wf-gallery-search{width:100%}}
+@media(prefers-reduced-motion:reduce){.wf-gallery-open img,.wf-gallery-view{transition:none}}
+</style>
+</head>
+<body class="wf-site">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div aria-hidden="true" class="scroll-progress"></div>
+<!-- The same SVG icon names and classes used by the homepage. -->
+<svg aria-hidden="true" class="svg-sprite" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-arrow" viewbox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"></path></symbol>
+<symbol id="i-arrow-up-right" viewbox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12"></path></symbol>
+<symbol id="i-arrow-up" viewbox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"></path></symbol>
+<symbol id="i-heart" viewbox="0 0 24 24"><path d="M20.5 5.5a5.2 5.2 0 0 0-7.35 0L12 6.65l-1.15-1.15a5.2 5.2 0 0 0-7.35 7.35L12 21l8.5-8.15a5.2 5.2 0 0 0 0-7.35Z"></path></symbol>
+<symbol id="i-people" viewbox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M2.5 20v-2a6.5 6.5 0 0 1 13 0v2m1-14a3 3 0 0 1 0 6m1.5 2a5 5 0 0 1 3.5 4.8V20"></path></symbol>
+<symbol id="i-spark" viewbox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z"></path></symbol>
+<symbol id="i-shield" viewbox="0 0 24 24"><path d="m12 2 8 4v6c0 5.1-3.4 8.4-8 10-4.6-1.6-8-4.9-8-10V6l8-4Z"></path><path d="m8.5 12 2.2 2.2 4.8-4.8"></path></symbol>
+<symbol id="i-sun" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></symbol>
+<symbol id="i-home" viewbox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3V10Z"></path><path d="M9 21v-8h6v8"></path></symbol>
+<symbol id="i-message" viewbox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8 8.8 8.8 0 0 1-4-.9L3 20l1.9-5A8 8 0 1 1 20 11Z"></path></symbol>
+<symbol id="i-pin" viewbox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol>
+</svg>
+<div aria-label="Site header" data-include="components/header.html" id="site-header"></div>
+<div class="mobile-backdrop" hidden=""></div>
+<main id="main-content">
+<section class="wf-gallery-hero" aria-labelledby="gallery-title"><div class="container">
+<div class="eyebrow eyebrow--light"><span class="eyebrow__dash"></span> WELLCARE FOUNDATION <span class="eyebrow__index">/ COMMUNITY GALLERY</span></div>
+<h1 id="gallery-title">Every face.<br>Every story.<br><em>Every community.</em></h1>
+<p>Celebrating the moments that bring people together — across generations, backgrounds and abilities. Explore the spirit of connection, kindness and belonging that inspires our work in Australia.</p>
+<a class="btn btn--orange" href="#explore-gallery">Explore the gallery ↗</a>
+</div></section>
+<div class="ticker" aria-label="Our community values"><div class="ticker__track" aria-hidden="true"><span>PEOPLE FIRST ✳ EVERY GENERATION ✳ EVERY BACKGROUND ✳ TOGETHER ✳ </span><span>PEOPLE FIRST ✳ EVERY GENERATION ✳ EVERY BACKGROUND ✳ TOGETHER ✳ </span><span>PEOPLE FIRST ✳ EVERY GENERATION ✳ EVERY BACKGROUND ✳ TOGETHER ✳ </span></div></div>
+<section class="wf-gallery-section" id="explore-gallery" aria-labelledby="gallery-heading"><div class="container">
+<div class="wf-gallery-heading"><div><div class="eyebrow">01 / MOMENTS OF CONNECTION</div><h2 id="gallery-heading">Life looks better<br><span class="text-blue">together.</span></h2></div><p>From food and friendship to everyday acts of kindness, these images reflect the inclusive community spirit behind our mission.</p></div>
+<div class="wf-gallery-toolbar"><div class="wf-gallery-filters" role="group" aria-label="Filter photographs">
+<button type="button" class="wf-gallery-filter" data-gallery-filter="all" aria-pressed="true">All photos</button>
+<button type="button" class="wf-gallery-filter" data-gallery-filter="community" aria-pressed="false">Community</button>
+<button type="button" class="wf-gallery-filter" data-gallery-filter="meals" aria-pressed="false">Food & meals</button>
+<button type="button" class="wf-gallery-filter" data-gallery-filter="volunteers" aria-pressed="false">Volunteering</button>
+<button type="button" class="wf-gallery-filter" data-gallery-filter="care" aria-pressed="false">Care</button>
+<button type="button" class="wf-gallery-filter" data-gallery-filter="events" aria-pressed="false">Events</button>
+</div><input class="wf-gallery-search" type="search" id="gallery-search" placeholder="Search photos…" aria-label="Search gallery photos"></div>
+<div class="wf-gallery-grid" id="wf-gallery-grid"><article class="wf-gallery-card" data-category="community" data-title="community connections">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Community connections" data-full="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85" data-alt="Neighbours sharing a joyful moment outdoors" data-caption="Community connections">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Neighbours sharing a joyful moment outdoors" onerror="this.onerror=null;this.src='img/gallery-01.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">COMMUNITY</span><strong>Community connections</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="meals" data-title="a meal shared">
+  <button class="wf-gallery-open" type="button" aria-label="View image: A meal shared" data-full="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85" data-alt="Friends gathering around a shared meal" data-caption="A meal shared">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Friends gathering around a shared meal" onerror="this.onerror=null;this.src='img/gallery-02.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">MEALS</span><strong>A meal shared</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="care" data-title="supporting one another">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Supporting one another" data-full="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1600&q=85" data-alt="Volunteers preparing practical community support" data-caption="Supporting one another">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80" alt="Volunteers preparing practical community support" onerror="this.onerror=null;this.src='img/gallery-03.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">CARE</span><strong>Supporting one another</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="community" data-title="all generations">
+  <button class="wf-gallery-open" type="button" aria-label="View image: All generations" data-full="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=85" data-alt="People of different generations spending time together" data-caption="All generations">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80" alt="People of different generations spending time together" onerror="this.onerror=null;this.src='img/gallery-04.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">COMMUNITY</span><strong>All generations</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="care" data-title="everyday kindness">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Everyday kindness" data-full="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1600&q=85" data-alt="People helping each other with kindness" data-caption="Everyday kindness">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80" alt="People helping each other with kindness" onerror="this.onerror=null;this.src='img/gallery-05.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">CARE</span><strong>Everyday kindness</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="meals" data-title="around the table">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Around the table" data-full="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85" data-alt="A welcoming community meal table" data-caption="Around the table">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="A welcoming community meal table" onerror="this.onerror=null;this.src='img/gallery-01.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">MEALS</span><strong>Around the table</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="community" data-title="young voices">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Young voices" data-full="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1600&q=85" data-alt="Young people enjoying time together outdoors" data-caption="Young voices">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=900&q=80" alt="Young people enjoying time together outdoors" onerror="this.onerror=null;this.src='img/gallery-04.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">COMMUNITY</span><strong>Young voices</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="volunteers" data-title="working together">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Working together" data-full="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85" data-alt="Volunteers collaborating on a community activity" data-caption="Working together">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Volunteers collaborating on a community activity" onerror="this.onerror=null;this.src='img/gallery-03.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">VOLUNTEERS</span><strong>Working together</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="meals" data-title="food with care">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Food with care" data-full="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=85" data-alt="Fresh food prepared for a shared meal" data-caption="Food with care">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Fresh food prepared for a shared meal" onerror="this.onerror=null;this.src='img/gallery-02.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">MEALS</span><strong>Food with care</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="community" data-title="neighbourhood spirit">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Neighbourhood spirit" data-full="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1600&q=85" data-alt="A diverse group connecting in a local setting" data-caption="Neighbourhood spirit">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" alt="A diverse group connecting in a local setting" onerror="this.onerror=null;this.src='img/gallery-01.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">COMMUNITY</span><strong>Neighbourhood spirit</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="volunteers" data-title="hands that help">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Hands that help" data-full="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=1600&q=85" data-alt="People joining hands to support their community" data-caption="Hands that help">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&w=900&q=80" alt="People joining hands to support their community" onerror="this.onerror=null;this.src='img/gallery-05.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">VOLUNTEERS</span><strong>Hands that help</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="community" data-title="a place to belong">
+  <button class="wf-gallery-open" type="button" aria-label="View image: A place to belong" data-full="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=85" data-alt="Friends enjoying a welcoming community gathering" data-caption="A place to belong">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80" alt="Friends enjoying a welcoming community gathering" onerror="this.onerror=null;this.src='img/gallery-04.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">COMMUNITY</span><strong>A place to belong</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="events" data-title="shared moments">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Shared moments" data-full="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=85" data-alt="People celebrating together at a local gathering" data-caption="Shared moments">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80" alt="People celebrating together at a local gathering" onerror="this.onerror=null;this.src='img/gallery-03.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">EVENTS</span><strong>Shared moments</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="meals" data-title="fresh beginnings">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Fresh beginnings" data-full="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=85" data-alt="Fresh produce for nourishing everyday meals" data-caption="Fresh beginnings">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Fresh produce for nourishing everyday meals" onerror="this.onerror=null;this.src='img/gallery-02.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">MEALS</span><strong>Fresh beginnings</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="events" data-title="making connections">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Making connections" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=85" data-alt="Community members enjoying a group gathering" data-caption="Making connections">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" alt="Community members enjoying a group gathering" onerror="this.onerror=null;this.src='img/gallery-01.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">EVENTS</span><strong>Making connections</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article>
+<article class="wf-gallery-card" data-category="volunteers" data-title="stronger together">
+  <button class="wf-gallery-open" type="button" aria-label="View image: Stronger together" data-full="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=85" data-alt="A team working together on a shared goal" data-caption="Stronger together">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="A team working together on a shared goal" onerror="this.onerror=null;this.src='img/gallery-05.jpg'">
+    <span class="wf-gallery-overlay"><span class="wf-gallery-category">VOLUNTEERS</span><strong>Stronger together</strong><span class="wf-gallery-view">View photo ↗</span></span>
+  </button>
+</article></div>
+<p class="wf-gallery-empty" id="wf-gallery-empty" hidden>No photos match your search. Try another category.</p>
+<p class="wf-gallery-note"><strong>Image note:</strong> This gallery currently uses illustrative photography to communicate our community vision. These images are not presented as photographs of actual Wellcare Foundation events or beneficiaries. Replace them with approved, consented photographs from your Australian activities before describing them as real Foundation moments.</p>
+</div></section>
+<section class="cta" aria-labelledby="gallery-cta"><div class="container cta__inner"><div><div class="eyebrow">02 / BE PART OF THE STORY</div><h2 id="gallery-cta">A little each day.<br><em>A lot of good together.</em></h2><p>Find out how you can give, volunteer or partner with Wellcare Foundation to support communities across Australia.</p></div><a class="btn btn--white" href="contact.html">Get in touch ↗</a><div aria-hidden="true" class="cta__shape"></div></div></section>
+</main>
+<div data-include="components/footer.html" id="site-footer"></div>
+<dialog class="wf-gallery-dialog" id="wf-gallery-dialog" aria-label="Photo preview"><figure class="wf-gallery-dialog-inner"><button type="button" class="wf-gallery-close" aria-label="Close photo">×</button><img alt="" id="wf-gallery-full"><figcaption id="wf-gallery-caption"></figcaption></figure></dialog>
+<button aria-label="Back to top" class="back-to-top" type="button"><svg class="icon"><use href="#i-arrow-up"></use></svg></button>
+<script>
+(()=>{
+ const filters=[...document.querySelectorAll('[data-gallery-filter]')], cards=[...document.querySelectorAll('.wf-gallery-card')], search=document.getElementById('gallery-search'), empty=document.getElementById('wf-gallery-empty');
+ let selected='all';
+ function update(){let visible=0;const query=search.value.trim().toLowerCase();cards.forEach(card=>{const match=(selected==='all'||card.dataset.category===selected)&&(!query||(card.dataset.title+' '+card.dataset.category).includes(query));card.hidden=!match;if(match)visible++;});empty.hidden=visible>0;}
+ filters.forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.galleryFilter;filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));update();}));search.addEventListener('input',update);
+ const dialog=document.getElementById('wf-gallery-dialog'),full=document.getElementById('wf-gallery-full'),caption=document.getElementById('wf-gallery-caption');
+ document.querySelectorAll('.wf-gallery-open').forEach(button=>button.addEventListener('click',()=>{const thumb=button.querySelector('img');full.src=thumb.currentSrc||thumb.src;full.alt=button.dataset.alt;caption.textContent=button.dataset.caption;if(typeof dialog.showModal==='function')dialog.showModal();}));
+ dialog.querySelector('.wf-gallery-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+})();
+</script>
+</body></html>
