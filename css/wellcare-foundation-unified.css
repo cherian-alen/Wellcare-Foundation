@@ -13090,3 +13090,61 @@ body.menu-lock {
     }
 }
 
+
+
+/* =====================================================
+   WELLCARE FOUNDATION — HEADER NAVIGATION FIX
+   ===================================================== */
+
+@media (max-width: 1050px) {
+  .site-header.header__area-3 {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #070c13;
+  }
+
+  .site-header .header__nav-2.site-nav {
+    display: block !important;
+    position: fixed;
+    top: var(--wf-header-height);
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - var(--wf-header-height));
+    padding: 25px;
+    overflow-y: auto;
+    background: #070c13;
+    z-index: 10001;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s ease, opacity .3s ease, visibility .3s;
+  }
+
+  .site-header.menu-open .header__nav-2.site-nav {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header .main-menu-3 {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* beat any inline styles from leftover template JS */
+  .site-header .main-menu-3 > li,
+  .site-header .main-menu-3 > li > a {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: inherit !important;
+  }
+}
+
+/* desktop: stop legacy rules hiding the nav at 1051–1199px */
+@media (min-width: 1051px) {
+  .site-header .header__nav-2 { display: block !important; }
+}

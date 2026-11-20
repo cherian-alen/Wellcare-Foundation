@@ -98,47 +98,95 @@
         }
     }
 
-    async function loadLayout() {
-        const components = $$("[data-include]");
+    // async function loadLayout() {
+    //     const components = $$("[data-include]");
 
-        // Support the original header/footer IDs when data-include
-        // is not already configured in the HTML.
-        const fallbackComponents = [
-            {
-                id: "header",
-                path: "components/header.html"
-            },
-            {
-                id: "footer",
-                path: "components/footer.html"
-            }
-        ];
+    //     // Support the original header/footer IDs when data-include
+    //     // is not already configured in the HTML.
+    //     const fallbackComponents = [
+    //         {
+    //             id: "header",
+    //             path: "components/header.html"
+    //         },
+    //         {
+    //             id: "footer",
+    //             path: "components/footer.html"
+    //         }
+    //     ];
 
-        fallbackComponents.forEach(component => {
-            const element = document.getElementById(component.id);
+    //     fallbackComponents.forEach(component => {
+    //         const element = document.getElementById(component.id);
 
-            if (
-                element &&
-                !element.dataset.include &&
-                !element.innerHTML.trim()
-            ) {
-                element.dataset.include = component.path;
-                components.push(element);
-            }
-        });
+    //         if (
+    //             element &&
+    //             !element.dataset.include &&
+    //             !element.innerHTML.trim()
+    //         ) {
+    //             element.dataset.include = component.path;
+    //             components.push(element);
+    //         }
+    //     });
 
-        await Promise.all(
-            components.map(component => loadComponent(component))
-        );
+    //     await Promise.all(
+    //         components.map(component => loadComponent(component))
+    //     );
 
-        // Initialize navigation only after header is loaded.
-        initActiveNavigation();
-        initMobileNavigation();
-        initDropdownNavigation();
+    //     // Initialize navigation only after header is loaded.
+    //     initActiveNavigation();
+    //     initMobileNavigation();
+    //     initDropdownNavigation();
 
-        // Footer content may have been loaded dynamically.
-        initCopyrightYear();
-    }
+    //     // Footer content may have been loaded dynamically.
+    //     initCopyrightYear();
+    // }
+
+
+async function loadLayout() {
+    // 1. Find components already configured in HTML.
+    const components = [...document.querySelectorAll("[data-include]")];
+
+    // 2. Support reusable header/footer placeholders.
+    const fallbackComponents = [
+        {
+            id: "header",
+            path: "components/header.html"
+        },
+        {
+            id: "footer",
+            path: "components/footer.html"
+        }
+    ];
+
+    fallbackComponents.forEach(({ id, path }) => {
+        const element = document.getElementById(id);
+
+        if (!element) return;
+
+        // Do not overwrite existing component paths.
+        if (!element.dataset.include && !element.innerHTML.trim()) {
+            element.dataset.include = path;
+        }
+
+        // Avoid loading an element twice.
+        if (element.dataset.include && !components.includes(element)) {
+            components.push(element);
+        }
+    });
+
+    // 3. Load components before initializing their functionality.
+    await Promise.all(
+        components.map(component => loadComponent(component))
+    );
+
+    // 4. Initialize header features after the header is present.
+    initActiveNavigation();
+    initMobileNavigation();
+    initDropdownNavigation();
+
+    // 5. Update dynamic footer content.
+    initCopyrightYear();
+}
+
 
     /* ========================================================
        03. ACTIVE NAVIGATION LINKS
@@ -252,87 +300,175 @@
        05. MOBILE NAVIGATION
     ======================================================== */
 
-    function initMobileNavigation() {
-        const header = $("#site-header-bar");
+    // function initMobileNavigation() {
+    //     const header = $("#site-header-bar");
 
-        if (!header) return;
+    //     if (!header) return;
 
-        const toggle = $(".site-header__toggle", header);
-        const menu = $("#primary-nav", header);
-        const backdrop = $(".mobile-backdrop");
+    //     const toggle = $(".site-header__toggle", header);
+    //     const menu = $("#primary-nav", header);
+    //     const backdrop = $(".mobile-backdrop");
 
-        if (!toggle || !menu) return;
+    //     if (!toggle || !menu) return;
 
-        const mobileQuery = window.matchMedia(
-            `(max-width: ${CONFIG.mobileBreakpoint}px)`
+    //     const mobileQuery = window.matchMedia(
+    //         `(max-width: ${CONFIG.mobileBreakpoint}px)`
+    //     );
+
+    //     const setMenuOpen = (open, restoreFocus = false) => {
+    //         const shouldOpen =
+    //             Boolean(open && mobileQuery.matches);
+
+    //         header.classList.toggle(
+    //             "menu-open",
+    //             shouldOpen
+    //         );
+
+    //         toggle.setAttribute(
+    //             "aria-expanded",
+    //             String(shouldOpen)
+    //         );
+
+    //         toggle.setAttribute(
+    //             "aria-label",
+    //             shouldOpen
+    //                 ? "Close navigation menu"
+    //                 : "Open navigation menu"
+    //         );
+
+    //         document.body.classList.toggle(
+    //             "menu-lock",
+    //             shouldOpen
+    //         );
+
+    //         if (backdrop) {
+    //             backdrop.hidden = !shouldOpen;
+    //         }
+
+    //         if (shouldOpen) {
+    //             $("a", menu)?.focus();
+    //         } else if (restoreFocus) {
+    //             toggle.focus();
+    //         }
+    //     };
+
+    //     toggle.addEventListener("click", () => {
+    //         setMenuOpen(
+    //             !header.classList.contains("menu-open")
+    //         );
+    //     });
+
+    //     backdrop?.addEventListener("click", () => {
+    //         setMenuOpen(false, true);
+    //     });
+
+    //     $$("a", menu).forEach(link => {
+    //         link.addEventListener("click", () => {
+    //             setMenuOpen(false);
+    //         });
+    //     });
+
+    //     window.addEventListener("keydown", event => {
+    //         if (
+    //             event.key === "Escape" &&
+    //             header.classList.contains("menu-open")
+    //         ) {
+    //             setMenuOpen(false, true);
+    //         }
+    //     });
+
+    //     mobileQuery.addEventListener("change", () => {
+    //         setMenuOpen(false);
+    //     });
+    // }
+
+
+function initMobileNavigation() {
+    const header = document.getElementById("site-header-bar");
+
+    if (!header) return;
+
+    const toggle = header.querySelector(".site-header__toggle");
+    const menu = header.querySelector("#primary-nav");
+    const backdrop = document.querySelector(".mobile-backdrop");
+
+    if (!toggle || !menu) {
+        console.warn("Mobile navigation toggle or menu not found.");
+        return;
+    }
+
+    const mobileQuery = window.matchMedia(
+        `(max-width: ${CONFIG.mobileBreakpoint}px)`
+    );
+
+    // Prevent duplicate initialization.
+    if (toggle.dataset.initialized === "true") return;
+    toggle.dataset.initialized = "true";
+
+    function setMenuOpen(open, restoreFocus = false) {
+        const shouldOpen = Boolean(open && mobileQuery.matches);
+
+        header.classList.toggle("menu-open", shouldOpen);
+        document.body.classList.toggle("menu-lock", shouldOpen);
+
+        toggle.setAttribute("aria-expanded", String(shouldOpen));
+        toggle.setAttribute(
+            "aria-label",
+            shouldOpen ? "Close navigation menu" : "Open navigation menu"
         );
 
-        const setMenuOpen = (open, restoreFocus = false) => {
-            const shouldOpen =
-                Boolean(open && mobileQuery.matches);
+        if (backdrop) {
+            backdrop.hidden = !shouldOpen;
+        }
 
-            header.classList.toggle(
-                "menu-open",
-                shouldOpen
-            );
+        // Keep navigation accessible on desktop and
+        // unavailable to keyboard focus while closed on mobile.
+        menu.inert = mobileQuery.matches && !shouldOpen;
 
-            toggle.setAttribute(
-                "aria-expanded",
-                String(shouldOpen)
-            );
+        if (shouldOpen) {
+            menu.querySelector("a")?.focus();
+        } else if (restoreFocus) {
+            toggle.focus();
+        }
+    }
 
-            toggle.setAttribute(
-                "aria-label",
-                shouldOpen
-                    ? "Close navigation menu"
-                    : "Open navigation menu"
-            );
+    // Open/close when clicking the toggle.
+    toggle.addEventListener("click", () => {
+        const isOpen = header.classList.contains("menu-open");
+        setMenuOpen(!isOpen);
+    });
 
-            document.body.classList.toggle(
-                "menu-lock",
-                shouldOpen
-            );
+    // Close when clicking outside the menu.
+    backdrop?.addEventListener("click", () => {
+        setMenuOpen(false, true);
+    });
 
-            if (backdrop) {
-                backdrop.hidden = !shouldOpen;
-            }
-
-            if (shouldOpen) {
-                $("a", menu)?.focus();
-            } else if (restoreFocus) {
-                toggle.focus();
-            }
-        };
-
-        toggle.addEventListener("click", () => {
-            setMenuOpen(
-                !header.classList.contains("menu-open")
-            );
-        });
-
-        backdrop?.addEventListener("click", () => {
-            setMenuOpen(false, true);
-        });
-
-        $$("a", menu).forEach(link => {
-            link.addEventListener("click", () => {
-                setMenuOpen(false);
-            });
-        });
-
-        window.addEventListener("keydown", event => {
-            if (
-                event.key === "Escape" &&
-                header.classList.contains("menu-open")
-            ) {
-                setMenuOpen(false, true);
-            }
-        });
-
-        mobileQuery.addEventListener("change", () => {
+    // Close when clicking a navigation link.
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
             setMenuOpen(false);
         });
-    }
+    });
+
+    // Close using the Escape key.
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            header.classList.contains("menu-open")
+        ) {
+            setMenuOpen(false, true);
+        }
+    });
+
+    // Close when switching between desktop and mobile layouts.
+    mobileQuery.addEventListener("change", () => {
+        setMenuOpen(false);
+    });
+
+    // Initialize the closed/open state correctly.
+    setMenuOpen(false);
+}
+
 
     /* ========================================================
        06. BOOTSTRAP DROPDOWN NAVIGATION
