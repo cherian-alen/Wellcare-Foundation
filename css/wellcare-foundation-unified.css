@@ -11056,7 +11056,7 @@ svg.icon {
   min-height: var(--wf-header-height);
   padding: 0;
 }
-.brand.header__logo-2, .brand {
+/* .brand.header__logo-2, .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -11077,7 +11077,7 @@ svg.icon {
   width: 23px;
   height: 23px;
 }
-.brand__words {
+/* .brand__words {
   display: flex;
   flex-direction: column;
 }
@@ -11088,12 +11088,7 @@ svg.icon {
   line-height: .95;
   letter-spacing: -.055em;
 }
-.brand__blue {
-  color: var(--wf-blue);
-}
-.brand__orange, .brand__period {
-  color: var(--wf-orange);
-}
+
 .brand__descriptor {
   color: #f2f5fa;
   font-family: Arial, sans-serif;
@@ -11102,7 +11097,427 @@ svg.icon {
   line-height: 1.5;
   margin-top: 6px;
   font-weight: 700;
+} */
+/* 
+
+/* =========================================
+   WELLCARE FOUNDATION BRAND
+========================================= */
+/* 
+.brand__words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1;
+} */
+/* 
+/* Main brand name */
+/* .brand__name {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+  white-space: nowrap;
 }
+
+.brand__blue,
+.brand__orange {
+  color: #07509c;
+}
+/* 
+/* Foundation Inc. row 
+.brand__foundation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 5px;
+} */
+/* 
+.brand__descriptor {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: #07509c;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+
+.brand__line {
+  flex: 1;
+  height: 3px;
+  min-width: 12px;
+  background-color: #159bd8;
+  border-radius: 3px;
+}
+
+/* Orange handwritten tagline 
+.brand__tagline {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0 8px 7px;
+  font-family: "Caveat", cursive;
+  font-size: 37px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ff812e;
+  white-space: nowrap;
+  transform: rotate(-2deg);
+}  */
+
+/* Handwritten underline 
+.brand__tagline::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 5%;
+  bottom: 0;
+  height: 2px;
+  background: #ff812e;
+  transform: rotate(-5deg);
+  border-radius: 50%;
+}
+
+/* Tablet 
+@media (max-width: 991px) {
+  .brand__name {
+    font-size: 38px;
+  }
+
+  .brand__descriptor {
+    font-size: 18px;
+  }
+
+  .brand__tagline {
+    font-size: 30px;
+  }
+}
+
+/* Mobile 
+@media (max-width: 767px) {
+  .brand__name {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .brand__foundation {
+    gap: 7px;
+    margin-top: 4px;
+  }
+
+  .brand__descriptor {
+    font-size: 14px;
+  }
+
+  .brand__line {
+    height: 2px;
+    min-width: 8px;
+  }
+
+  .brand__tagline {
+    font-size: 25px;
+    margin-top: 5px;
+  }
+}
+
+/* Small phones 
+@media (max-width: 380px) {
+  .brand__name {
+    font-size: 25px;
+  }
+
+  .brand__descriptor {
+    font-size: 12px;
+  }
+
+  .brand__tagline {
+    font-size: 21px;
+  }
+} */
+
+
+/* =========================================
+   WELLCARE FOUNDATION HEADER BRAND
+========================================= */
+
+/* Brand container */
+.brand.header__logo-2,
+.brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   LOGO IMAGE
+========================================= */
+
+.brand__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+    flex: 0 0 65px;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    transform: none;
+    overflow: visible;
+}
+
+/* Actual logo image */
+.brand__icon .brand__logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border: none;
+    transform: none;
+}
+
+/* =========================================
+   BRAND TEXT CONTAINER
+========================================= */
+
+.brand__words {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+
+    text-align: center;
+    line-height: 1;
+}
+
+/* =========================================
+   WELLCARE MAIN NAME
+========================================= */
+
+.brand__name {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.brand__blue,
+.brand__orange {
+    color: #07509c;
+}
+.brand__blue {
+  color: var(--wf-blue);
+}
+.brand__orange, .brand__period {
+  color: var(--wf-orange);
+}
+
+/* =========================================
+   FOUNDATION INC.
+========================================= */
+
+.brand__foundation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: 100%;
+    margin-top: 4px;
+}
+
+.brand__descriptor {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+    color: #f4f6f7;
+    white-space: nowrap;
+}
+
+/* Blue horizontal lines */
+.brand__line {
+    display: block;
+    flex: 1;
+    min-width: 8px;
+    height: 2px;
+    background-color: #159bd8;
+    border-radius: 2px;
+}
+
+/* =========================================
+   JOY OF GIVING TAGLINE
+========================================= */
+
+.brand__tagline {
+    position: relative;
+    display: inline-block;
+
+    margin-top: 5px;
+    padding: 0 5px 5px;
+
+    font-family: "Playwrite AU SA Guides", cursive;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: #ff812e;
+    white-space: nowrap;
+    transform: rotate(-3deg);
+}
+
+/* Handwritten underline */
+.brand__tagline::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    right: 5%;
+    bottom: 0;
+
+    height: 1.5px;
+    background-color: #ff812e;
+    transform: rotate(-4deg);
+    border-radius: 50%;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .brand.header__logo-2,
+    .brand {
+        gap: 7px;
+    }
+
+    .brand__icon {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+    }
+
+    .brand__name {
+        font-size: 25px;
+        letter-spacing: -1px;
+    }
+
+    .brand__descriptor {
+        font-size: 11px;
+    }
+
+    .brand__tagline {
+        font-size: 10px;
+    }
+
+    .brand__foundation {
+        gap: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .brand.header__logo-2,
+    .brand {
+        gap: 6px;
+        max-width: calc(100vw - 105px);
+    }
+
+    .brand__icon {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+    }
+
+    .brand__name {
+        font-size: 22px;
+        letter-spacing: -0.6px;
+    }
+
+    .brand__descriptor {
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+
+    .brand__foundation {
+        gap: 4px;
+        margin-top: 3px;
+    }
+
+    .brand__line {
+        min-width: 6px;
+        height: 2px;
+    }
+
+    .brand__tagline {
+        font-size: 10px;
+        margin-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .brand.header__logo-2,
+    .brand {
+        gap: 5px;
+    }
+
+    .brand__icon {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .brand__name {
+        font-size: 19px;
+    }
+
+    .brand__descriptor {
+        font-size: 9px;
+    }
+
+    .brand__tagline {
+        font-size: 10px;
+    }
+}
+
+
 .site-header .header__nav-2 {
   text-align: center;
 }
@@ -11124,7 +11539,7 @@ svg.icon {
   position: relative;
   display: inline-block;
   padding: 31px 0;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
   color: #dde4ed;
