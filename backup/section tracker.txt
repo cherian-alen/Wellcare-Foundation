@@ -1,0 +1,54 @@
+
+<!-- <div aria-label="Care, community, connection and inclusion" class="ticker">
+<div aria-hidden="true" class="ticker__track">
+<span>GIVE $1 A DAY <b>✳</b> QUALITY MEALS <b>✳</b> COMMUNITY <b>✳</b> TOGETHER <b>✳</b></span>
+<span>GIVE $1 A DAY <b>✳</b> QUALITY MEALS <b>✳</b> COMMUNITY <b>✳</b> TOGETHER <b>✳</b></span>
+<span>GIVE $1 A DAY <b>✳</b> QUALITY MEALS <b>✳</b> COMMUNITY <b>✳</b> TOGETHER <b>✳</b></span>
+</div>
+</div> -->
+
+
+<!-- OUR SUPPORTERS / PARTNERS LOGO TICKER -->
+<!-- <section class="partners" aria-label="Our supporters and partners">
+
+  <div class="partners__heading">
+    <span>OUR SUPPORTERS & PARTNERS</span>
+  </div>
+
+  <div class="ticker ticker--logos">
+    <div class="ticker__track">
+
+      First set of logos 
+      <div class="ticker__group">
+        <img src="img/partners/ggcafe.png"
+             alt="Company 1" />
+        <img src="img/partners/caretaxi.png"
+             alt="Company 2" />
+        <img src="img/partners/wellcareaus.png"
+             alt="Company 3" />
+         <img src="assets/img/partners/company-4.png"
+             alt="Company 4" />
+        <img src="assets/img/partners/company-5.png"
+             alt="Company 5" /> -->
+      <!-- </div> -->
+
+      <!-- Duplicate for seamless infinite scrolling -->
+      <!-- <div class="ticker__group" aria-hidden="true">
+        <img src="img/partners/ggcafe.png" alt="" />
+        <img src="img/partners/caretaxi.png" alt="" />
+        <img src="img/partners/wellcareaus.png" alt="" /> -->
+        <!-- <img src="assets/img/partners/company-4.png" alt="" />
+        <img src="assets/img/partners/company-5.png" alt="" /> -->
+      <!-- </div>
+      <div class="ticker__group" aria-hidden="true">
+        <img src="img/partners/ggcafe.png" alt="" />
+        <img src="img/partners/caretaxi.png" alt="" />
+        <img src="img/partners/wellcareaus.png" alt="" /> -->
+        <!-- <img src="assets/img/partners/company-4.png" alt="" />
+        <img src="assets/img/partners/company-5.png" alt="" /> -->
+      <!-- </div>
+
+    </div>
+  </div>
+
+</section> --> 
