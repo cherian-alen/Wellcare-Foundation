@@ -14076,7 +14076,7 @@ body.menu-lock {
     height: 12px;
     background: transparent;
 
-    border-top: 2px solid #ff812e;
+    border-top: 2px solid #f3f1f0;
     border-radius: 50% 50% 0 0;
     transform: rotate(-3deg);
     pointer-events: none;
