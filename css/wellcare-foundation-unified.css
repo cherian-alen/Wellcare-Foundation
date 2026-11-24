@@ -14027,7 +14027,7 @@ body.menu-lock {
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.0;
-    color: #159bd8;
+    color: #ff812e;
     white-space: nowrap;
 }
 
@@ -14049,7 +14049,7 @@ body.menu-lock {
     font-weight: 400;
     line-height: 1.0;
     letter-spacing: -0.5px;
-    color: #ff812e;
+    color: #f3f0ef;
     white-space: nowrap;
     transform: none;
 }
@@ -14078,7 +14078,6 @@ body.menu-lock {
 
     border-top: 2px solid #ff812e;
     border-radius: 50% 50% 0 0;
-
     transform: rotate(-3deg);
     pointer-events: none;
 }
